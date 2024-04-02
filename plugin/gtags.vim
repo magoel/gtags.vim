@@ -470,6 +470,8 @@ function! s:ExecLoad(option, long_option, pattern, flags, ...)
     if jump == 1
         cexpr! l:result		" jump
     endif
+	" set title of quick fix list window to executed cmd
+	call setqflist([], 'a', {'title': l:cmd})
     let &efm = l:efm_org
 endfunction
 
